@@ -135,10 +135,10 @@ public class ImplPrecioDAO implements I_DAO<Precio, Integer> {
 			stat = con.prepareStatement(GETALL);
 			rs = stat.executeQuery();
 
-			if (rs.next())
+			while(rs.next())
+			{
 				precios.add(convertir(rs));
-			else
-				throw new DAOException("No se ha encontrado registro");
+			}
 		} catch (SQLException e) {
 			throw new DAOException("Error delete precio in DAO", e);
 		} finally {

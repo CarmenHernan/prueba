@@ -176,11 +176,11 @@ public class ImplCategoriaDAO implements I_DAO<Categoria, Integer>
 		{
 			stat=con.prepareStatement(GETALL);
 			rs=stat.executeQuery();
-					
-			if(rs.next())
+			
+			while(rs.next())
+			{
 				categorias.add(convertir(rs));
-			else
-				throw new DAOException("No se ha encontrado registro");
+			}
 		}
 		catch(SQLException e)
 		{

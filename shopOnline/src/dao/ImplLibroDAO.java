@@ -12,19 +12,19 @@ import modelo.Libro;
 public class ImplLibroDAO implements I_DAO<Libro, Integer>
 {
 	
-	private final String INSERT="INSERT INTO libro (isbn, titulo, autor, edicion, fechaPublicacion, descripcion)"
-			+ " VALUES (?,?,?,?,?,?)";	//6elem
+	private final String INSERT="INSERT INTO libro (isbn, titulo, autor, edicion, fechaPublicacion, descripcion, urlImagen)"
+			+ " VALUES (?,?,?,?,?,?,?)";	//6elem
 	//no va en el orden de la tabla sino en el de las interrogaciones
 	
-	private final String UPDATE="UPDATE libro SET isbn=?, titulo=?, autor=?, edicion=?, fechaPublicacion=?, descripcion=?"
+	private final String UPDATE="UPDATE libro SET isbn=?, titulo=?, autor=?, edicion=?, fechaPublicacion=?, descripcion=?, urlImagen=?"
 			+ " WHERE idLibro=?";	//7elem
 	
 	private final String DELETE="DELETE FROM libro WHERE idLibro=?";	//1elem
 	
-	private final String GETONE="SELECT idLibro, isbn, titulo, autor, edicion, fechaPublicacion, descripcion FROM libro"
+	private final String GETONE="SELECT idLibro, isbn, titulo, autor, edicion, fechaPublicacion, descripcion, urlImagen FROM libro"
 			+ " WHERE idLibro=?";//1elem
 	
-	private final String GETALL="SELECT idLibro, isbn, titulo,autor, edicion, fechaPublicacion, descripcion FROM libro";
+	private final String GETALL="SELECT idLibro, isbn, titulo,autor, edicion, fechaPublicacion, descripcion, urlImagen FROM libro";
 	
 	
 	private Connection con = null;
@@ -50,6 +50,7 @@ public class ImplLibroDAO implements I_DAO<Libro, Integer>
 			stat.setInt(4, libro.getEdicion());
 			stat.setString(5, "2016-10-25");
 			stat.setString(6, libro.getDescripcion());
+			stat.setString(7, libro.getUrlImagen());
 			
 		
 	
@@ -90,7 +91,8 @@ public class ImplLibroDAO implements I_DAO<Libro, Integer>
 			stat.setInt(4, libro.getEdicion());
 			stat.setString(5, "2016-10-25");
 			stat.setString(6, libro.getDescripcion());
-			stat.setInt(7, libro.getIdLibro());
+			stat.setString(7, libro.getUrlImagen());
+			stat.setInt(8, libro.getIdLibro());
 			System.out.println(stat);
 			
 			
@@ -199,14 +201,10 @@ public class ImplLibroDAO implements I_DAO<Libro, Integer>
 			stat=con.prepareStatement(GETALL);
 			rs=stat.executeQuery();
 			
-			if(rs.next())
+			while(rs.next())
 			{
 				libros.add(convertir(rs));
-				System.out.println("elemento extraido");
 			}
-				
-			else
-	            throw new DAOException("No se ha encontrado registro");
 		}
 		catch(SQLException e)
 		{
@@ -241,12 +239,12 @@ public class ImplLibroDAO implements I_DAO<Libro, Integer>
 		Integer edicion=rs.getInt("edicion");
 		Date fechaPublicacion=rs.getDate("fechaPublicacion");
 		String descripcion=rs.getString("descripcion");
-		
+		String urlImagen=rs.getString("urlImagen");
 		
 		
 		
 		//Con los atributos creo el objeto		
-		Libro libro= new Libro(idLibro, isbn, titulo, autor, edicion, fechaPublicacion,descripcion);
+		Libro libro= new Libro(idLibro, isbn, titulo, autor, edicion, fechaPublicacion,descripcion,urlImagen);
 		//Retorno el objeto creado
 		return(libro);
 	}

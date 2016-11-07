@@ -18,6 +18,7 @@ public class Libro
 	private Integer edicion;	
 	private Date fechaPublicacion;
 	private String descripcion;
+	private String urlImagen;
 	
 
 	//Constructor vacio
@@ -28,7 +29,7 @@ public class Libro
 	
 	//Constructor por parametros
 	public Libro(Integer idLibro, String isbn, String titulo, String autor, Integer edicion, Date fechaPublicacion,
-				String descripcion)
+				String descripcion, String urlImagen)
 	{
 		this.idLibro=idLibro;
 		this.isbn=isbn;
@@ -37,11 +38,12 @@ public class Libro
 		this.fechaPublicacion=fechaPublicacion;
 		this.descripcion=descripcion;
 		this.autor=autor;
+		this.urlImagen=urlImagen;
 	}
 		
 	//Constructor por parametros (sin idLibro ya que se lo asigna autoincremento mysql)
 	public Libro(String isbn, String titulo, String autor, Integer edicion, Date fechaPublicacion,
-					String descripcion)
+					String descripcion, String urlImagen)
 	{
 		this.isbn=isbn;
 		this.titulo=titulo;
@@ -49,6 +51,7 @@ public class Libro
 		this.fechaPublicacion=fechaPublicacion;
 		this.descripcion=descripcion;
 		this.autor=autor;
+		this.urlImagen=urlImagen;
 	}
 		
 
@@ -150,6 +153,17 @@ public class Libro
 	{
 		this.autor = autor;
 	}
+	
+	
+	public String getUrlImagen() 
+	{
+		return urlImagen;
+	}
+
+	public void setUrlImagen(String urlImagen) 
+	{
+		this.urlImagen = urlImagen;
+	}
 
 
 	//Sobreescritura del metodo toString
@@ -159,6 +173,8 @@ public class Libro
 				+ ", fechaPublicacion=" + fechaPublicacion + ", descripcion=" + descripcion + ", autor=" + autor
 				+ "]";
 	}
+
+	
 
 
 	

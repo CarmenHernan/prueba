@@ -193,15 +193,11 @@ public class ImplEditorialDAO implements I_DAO<Editorial, Integer>
 		{
 			stat=con.prepareStatement(GETALL);
 			rs=stat.executeQuery();
-						
-			if(rs.next())
-				//Resultset.next() Moves the cursor forward one row from its current position.
-				//cada fila es una nueva editorial, en las columnas están los atributos
+			
+			while(rs.next())
+			{
 				editoriales.add(convertir(rs));
-			//añade al ArrayList objetos de tipo editorial
-		
-			else
-				throw new DAOException("No se ha encontrado registro");
+			}
 		}
 		catch(SQLException e)
 		{

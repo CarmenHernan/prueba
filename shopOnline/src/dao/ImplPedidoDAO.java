@@ -197,10 +197,10 @@ public class ImplPedidoDAO implements I_DAO<Pedido, Integer>
 			stat=con.prepareStatement(GETALL);
 			rs=stat.executeQuery();
 			
-			if(rs.next())
+			while(rs.next())
+			{
 				pedidos.add(convertir(rs));
-			else
-	            throw new DAOException("No se ha encontrado registro");
+			}
 		}
 		catch(SQLException e)
 		{
