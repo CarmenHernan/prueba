@@ -24,7 +24,7 @@ public class Main
 		Libro l1= new Libro("9788408159735", "Solo para tus ojos","J. J. Benitez",4, new Date(), "En septiembre de 2016, J. J. Benítez cumple 70 años y 45 de investigación ovni. En estos momentos es uno de los investigadores más veteranos. Coincidiendo con estos dos aniversarios, el autor escribe Solo para tus ojos como obra conmemorativa, tras 22 libros sobre el tema","soloParaTusOjos.jpg" );
 		dao.insertar(l1);
 		
-		
+		System.out.println("hola holita");
 		
 		//ELIMINAR OBJETO (FIJARSE EN QUE EXISTA ID)
 		//dao.eliminarPorId(12);
