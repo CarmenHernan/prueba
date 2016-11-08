@@ -17,7 +17,7 @@ public class Main
 		
 		//PRUEBAS CON LA TABLA LIBRO
 		
-		
+		System.out.println("hola soy hector, probando git");
 		ImplLibroDAO dao= new ImplLibroDAO();
 		
 		//INSERTAR OBJETO
