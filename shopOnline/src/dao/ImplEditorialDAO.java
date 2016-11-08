@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Editorial;
+import utilidades.ConexionDB;
 
 public class ImplEditorialDAO implements I_DAO<Editorial, Integer>
 {

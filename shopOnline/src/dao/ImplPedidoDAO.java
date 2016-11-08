@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.util.List;
 import java.util.ArrayList;
 import modelo.Pedido;
+import utilidades.ConexionDB;
 
 public class ImplPedidoDAO implements I_DAO<Pedido, Integer>
 {

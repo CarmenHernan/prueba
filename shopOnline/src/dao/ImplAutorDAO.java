@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Autor;
+import utilidades.ConexionDB;
 
 public class ImplAutorDAO implements I_DAO<Autor, Integer>
 {		

@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Stock;
+import utilidades.ConexionDB;
 
 public class ImplStockDAO implements I_DAO<Stock, Integer> {
 	private final String INSERT = "INSERT INTO stock (cantidadStock, idLibro) VALUES (?,?)"; // 2elem

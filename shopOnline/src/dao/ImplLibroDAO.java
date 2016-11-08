@@ -8,6 +8,7 @@ import java.sql.Date;
 import java.util.List;
 import java.util.ArrayList;
 import modelo.Libro;
+import utilidades.ConexionDB;
 
 public class ImplLibroDAO implements I_DAO<Libro, Integer>
 {

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
 import modelo.Cliente;
+import utilidades.ConexionDB;
 
 public class ImplClienteDAO implements I_DAO<Cliente, Integer>
 {

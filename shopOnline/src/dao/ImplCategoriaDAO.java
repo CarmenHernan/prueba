@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+import utilidades.ConexionDB;
 import modelo.Categoria;
 
 public class ImplCategoriaDAO implements I_DAO<Categoria, Integer>
