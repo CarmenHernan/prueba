@@ -25,7 +25,7 @@ public class Main
 		dao.insertar(l1);
 		
 		System.out.println("hola holita");
-		
+		System.out.println("aduis");
 		//ELIMINAR OBJETO (FIJARSE EN QUE EXISTA ID)
 		//dao.eliminarPorId(12);
 		
