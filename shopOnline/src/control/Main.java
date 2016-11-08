@@ -26,6 +26,7 @@ public class Main
 		
 		System.out.println("hola holita");
 		System.out.println("aduis");
+		System.out.println("Hola, soy Sonia");
 		//ELIMINAR OBJETO (FIJARSE EN QUE EXISTA ID)
 		//dao.eliminarPorId(12);
 		
